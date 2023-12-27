@@ -1,29 +1,20 @@
-"use client";
 import Card from "./Card";
+import { GetNftResponse } from "@/lib/definitions";
 
-const Listing = (props: { collection: string }) => {
+const Listing = ({ data }: { data: GetNftResponse | null }) => {
   return (
     <ul className="grid-card-list d-flex flex-wrap">
-      <Card
-        address="abc990uASDLKJjklanm"
-        collection="collection"
-        identifier="123"
-        image="url"
-        name="Testing"
-        token="000"
-        key={123}
-      />
-      {/* {nftList?.map((nft) => (
+      {data?.data?.nfts?.map((nft) => (
         <Card
-          key={nft.identifier}
-          name={nft?.name}
-          identifier={nft?.identifier}
-          image={nft?.image_url}
-          token={nft?.token_standard}
-          collection={nft?.collection}
-          address={nft?.contract}
+          address={nft.contract}
+          collection={nft.collection}
+          identifier={nft.identifier}
+          image={nft.image_url}
+          name={nft.name}
+          token={nft.token_standard}
+          key={nft.collection + nft.identifier}
         />
-      ))} */}
+      ))}
     </ul>
   );
 };

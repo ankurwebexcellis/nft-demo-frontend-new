@@ -25,9 +25,7 @@ const Card = ({
           </div>
         </div>
         <div className="gc-img-box">
-          <div className="pc-image">
-            <img src={image} alt="" />
-          </div>
+          <div className="pc-image">{image && <img src={image} alt="" />}</div>
         </div>
         <div className="gc-footer">
           <div className="gc-intro-group d-flex flex-wrap">

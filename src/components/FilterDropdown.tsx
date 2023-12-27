@@ -8,13 +8,13 @@ const FilterDropdown = () => {
   const pathname = usePathname();
   const { replace } = useRouter();
 
-  const selectValue = searchParams.get("address") || "";
+  const selectValue = searchParams.get("collection") || "";
 
-  const handleSelect = useCallback((address: string) => {
+  const handleSelect = useCallback((collection: string) => {
     const params = new URLSearchParams(searchParams);
 
-    if (address) params.set("address", address);
-    else params.set("address", "0x5Af0D9827E0c53E4799BB226655A1de152A425a5");
+    if (collection) params.set("collection", collection);
+    else params.set("collection", "0x5Af0D9827E0c53E4799BB226655A1de152A425a5");
 
     replace(`${pathname}?${params.toString()}`);
   }, []);

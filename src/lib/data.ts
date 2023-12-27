@@ -1,3 +1,4 @@
+"use server";
 import axios from "axios";
 import { GetNftResponse, NftFetchParams } from "./definitions";
 
@@ -9,10 +10,9 @@ export const fetchNftByContract = async (params: NftFetchParams) => {
         params,
       }
     );
-    console.log("Response:", data, status);
     return data;
   } catch (err) {
-    console.log("Error:", err);
     // return err;
+    return null;
   }
 };

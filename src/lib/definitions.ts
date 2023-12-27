@@ -5,9 +5,9 @@ export type SidebarNavProps = {
 
 export type NFTCardProps = {
   address: string;
-  name: string;
+  name: string | null;
   identifier: string;
-  image: string;
+  image: string | null;
   token: string;
   collection: string;
 };
