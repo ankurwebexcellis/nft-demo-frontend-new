@@ -3,29 +3,55 @@
 import { useEffect, useState } from "react";
 import Card from "./Card";
 import { GetNftResponse, Nft } from "@/lib/definitions";
-import { CardSkeleton } from "../Skeletons";
+import { useInView } from "react-intersection-observer";
+import { fetchNftByContract } from "@/lib/data";
+import LoadMore from "./LoadMore";
 
-const Listing = ({ data }: { data: Nft[] }) => {
-  const [nftList, setNftList] = useState<Nft[]>([]);
+const Listing = async ({
+  data,
+  address,
+}: {
+  data: {
+    nfts: Nft[];
+    next: string;
+  };
+  address: string;
+}) => {
+  const [nftList, setNftList] = useState<Nft[]>(data?.nfts ?? []);
+  const [next, setNext] = useState<string>(data?.next ?? "");
 
-  useEffect(() => {
-    if (data) setNftList(data);
-  }, [data]);
+  const { ref, inView } = useInView();
+
+  // useEffect(() => {
+  //   if (inView && !pageLoading) {
+  //     // getNftList();
+  //   }
+  // }, [inView]);
+
+  const getNftList = async () => {
+    const newList = (await fetchNftByContract({ address, next })) || null;
+    console.log("new:", newList);
+    if (newList?.nfts) setNftList([...nftList, ...newList?.nfts]);
+    if (newList?.next) setNext(newList?.next);
+  };
 
   return (
-    <ul className="grid-card-list d-flex flex-wrap">
-      {nftList?.map((nft) => (
-        <Card
-          address={nft.contract}
-          collection={nft.collection}
-          identifier={nft.identifier}
-          image={nft.image_url}
-          name={nft.name}
-          token={nft.token_standard}
-          key={nft.collection + nft.identifier}
-        />
-      ))}
-    </ul>
+    <>
+      <ul className="grid-card-list d-flex flex-wrap">
+        {nftList?.map((nft) => (
+          <Card
+            address={nft.contract}
+            collection={nft.collection}
+            identifier={nft.identifier}
+            image={nft.image_url}
+            name={nft.name}
+            token={nft.token_standard}
+            key={nft.collection + nft.identifier}
+          />
+        ))}
+      </ul>
+      <LoadMore getNftList={getNftList} />
+    </>
   );
 };
 

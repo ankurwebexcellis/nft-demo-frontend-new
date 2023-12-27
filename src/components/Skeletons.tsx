@@ -16,7 +16,7 @@ export const CardSkeleton = () => {
             </div>
           </div>
           <div className="gc-img-box">
-            <div className="pc-image">
+            <div className="pc-image" style={{ paddingBottom: "90%" }}>
               <Skeleton
                 height="100%"
                 style={{
@@ -68,6 +68,21 @@ export const ListingCardSkeleton = () => {
       <CardSkeleton />
       <CardSkeleton />
     </ul>
+  );
+};
+
+export const LoadMoreListingCardSkeleton = () => {
+  return (
+    <>
+      <CardSkeleton />
+      <CardSkeleton />
+      <CardSkeleton />
+      <CardSkeleton />
+      <CardSkeleton />
+      <CardSkeleton />
+      <CardSkeleton />
+      <CardSkeleton />
+    </>
   );
 };
 

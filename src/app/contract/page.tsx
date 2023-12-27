@@ -3,7 +3,11 @@ import { fetchNftByContract } from "@/lib/data";
 
 import FilterDropdown from "@/components/FilterDropdown";
 import Listing from "@/components/nftList/Listing";
-import { CardSkeleton, ListingCardSkeleton } from "@/components/Skeletons";
+import {
+  CardSkeleton,
+  ListingCardSkeleton,
+  LoadMoreListingCardSkeleton,
+} from "@/components/Skeletons";
 
 const Contract = async ({
   searchParams,
@@ -15,7 +19,6 @@ const Contract = async ({
   const address = searchParams?.collection || "";
 
   const nftList = (await fetchNftByContract({ address })) || null;
-
   return (
     <div className="main-content-wrapper position-relative">
       <div className="mcw-header d-flex align-items-center">
@@ -32,7 +35,7 @@ const Contract = async ({
           </div>
         </div>
         <Suspense fallback={<ListingCardSkeleton />}>
-          {nftList?.data?.nfts && <Listing data={nftList?.data?.nfts} />}
+          {nftList && <Listing data={nftList} address={address} />}
         </Suspense>
       </div>
     </div>

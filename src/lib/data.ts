@@ -13,10 +13,26 @@ export const fetchNftByContract = async (params: NftFetchParams) => {
         params,
       }
     );
-    return data;
+    return data?.data;
   } catch (err) {
     // return err;
     return null;
+  }
+};
+
+export const fetchNftByWallet = async (params: NftFetchParams) => {
+  try {
+    const { data, status } = await axios.get<GetNftResponse>(
+      process.env.API_URL + "nftApis/byWallet",
+      {
+        params,
+      }
+    );
+    return data?.data;
+  } catch (err) {
+    // return err;
+    return null;
+    // TODO: Error Handling for all api calls
   }
 };
 
