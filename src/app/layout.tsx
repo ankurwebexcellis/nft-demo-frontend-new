@@ -6,7 +6,6 @@ import { Inter } from "next/font/google";
 //  Components
 import Header from "@/components/Header";
 import Sidebar from "@/components/sidebar/Sidebar";
-// import BootstrapClient from "@/components/BootstrapClient";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,11 +22,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head></head>
       <body className={inter.className}>
         <Header />
-        {children}
-        <Sidebar />
+        <main className="page-wrapper">
+          <Sidebar />
+          {children}
+        </main>
       </body>
     </html>
   );

@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const SidebarItem = ({ name, href }: SidebarNavProps) => {
   const pathname = usePathname();
-  console.log(pathname);
+
   return (
     <li className={`menu-item ${pathname.includes(href) && "active"}`}>
       <Link key={name} href={href}>
