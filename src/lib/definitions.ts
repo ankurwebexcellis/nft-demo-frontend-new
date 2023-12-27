@@ -15,6 +15,18 @@ export type NFTCardProps = {
 export type NftFetchParams = {
   address: string;
   next?: string;
+  identifier?: string;
+};
+
+export type NftTraits = {
+  trait_type: string;
+  value: string;
+  trait_count: number;
+};
+
+export type NftOwners = {
+  address: string;
+  quantity?: number;
 };
 
 export type Nft = {
@@ -30,6 +42,8 @@ export type Nft = {
   updated_at: string;
   is_disabled: boolean;
   is_nsfw: boolean;
+  traits?: NftTraits[];
+  owners?: NftOwners[];
 };
 
 export type GetNftResponse = {
@@ -40,4 +54,11 @@ export type GetNftResponse = {
   status: number;
   headers?: object;
   res?: object;
+};
+
+export type GetNftInfoResponse = {
+  data: {
+    nft: Nft;
+  };
+  status: number;
 };

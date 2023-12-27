@@ -1,7 +1,7 @@
 "use client";
 
 import { useSearchParams, usePathname, useRouter } from "next/navigation";
-import { useCallback } from "react";
+import { useCallback, useEffect } from "react";
 
 const FilterDropdown = () => {
   const searchParams = useSearchParams();
@@ -17,6 +17,10 @@ const FilterDropdown = () => {
     else params.set("collection", "0x5Af0D9827E0c53E4799BB226655A1de152A425a5");
 
     replace(`${pathname}?${params.toString()}`);
+  }, []);
+
+  useEffect(() => {
+    handleSelect("0x5Af0D9827E0c53E4799BB226655A1de152A425a5");
   }, []);
 
   return (

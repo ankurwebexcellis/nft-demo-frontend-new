@@ -15,15 +15,6 @@ export default function Contract({
         <h1>NFTs by Wallet</h1>
       </div>
       <div className="fwc-wrapper">
-        <div className="fwc-head ">
-          <div className="fwc-inner">
-            <ul className="filter-mode-list d-flex flex-wrap align-items-center">
-              <li className="flex-fill">
-                <FilterDropdown />
-              </li>
-            </ul>
-          </div>
-        </div>
         <Listing collection={collection} />
         {/* <CardListing loading={loading} nftList={nftList} />
         {loadingMore && (
