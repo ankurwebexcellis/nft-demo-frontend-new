@@ -1,6 +1,7 @@
+"use client";
 import Card from "./Card";
 
-const Listing = () => {
+const Listing = (props: { collection: string }) => {
   return (
     <ul className="grid-card-list d-flex flex-wrap">
       <Card
