@@ -34,15 +34,6 @@ const Contract = async ({
         <Suspense fallback={<ListingCardSkeleton />}>
           {nftList?.data?.nfts && <Listing data={nftList?.data?.nfts} />}
         </Suspense>
-        {/* <CardListing loading={loading} nftList={nftList} />
-        {loadingMore && (
-          <ul className="grid-card-list d-flex flex-wrap">
-            <CardLoading />
-            <CardLoading />
-            <CardLoading />
-            <CardLoading />
-          </ul>
-        )} */}
       </div>
     </div>
   );
