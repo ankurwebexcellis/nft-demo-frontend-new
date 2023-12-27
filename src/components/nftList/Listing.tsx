@@ -1,10 +1,20 @@
-import Card from "./Card";
-import { GetNftResponse } from "@/lib/definitions";
+"use client";
 
-const Listing = ({ data }: { data: GetNftResponse | null }) => {
+import { useEffect, useState } from "react";
+import Card from "./Card";
+import { GetNftResponse, Nft } from "@/lib/definitions";
+import { CardSkeleton } from "../Skeletons";
+
+const Listing = ({ data }: { data: Nft[] }) => {
+  const [nftList, setNftList] = useState<Nft[]>([]);
+
+  useEffect(() => {
+    if (data) setNftList(data);
+  }, [data]);
+
   return (
     <ul className="grid-card-list d-flex flex-wrap">
-      {data?.data?.nfts?.map((nft) => (
+      {nftList?.map((nft) => (
         <Card
           address={nft.contract}
           collection={nft.collection}

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "bootstrap/dist/css/bootstrap.css";
+import "react-loading-skeleton/dist/skeleton.css";
 import "./globals.css";
 import { Inter } from "next/font/google";
 

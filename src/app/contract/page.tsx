@@ -1,6 +1,9 @@
+import { Suspense } from "react";
+import { fetchNftByContract } from "@/lib/data";
+
 import FilterDropdown from "@/components/FilterDropdown";
 import Listing from "@/components/nftList/Listing";
-import { fetchNftByContract } from "@/lib/data";
+import { CardSkeleton, ListingCardSkeleton } from "@/components/Skeletons";
 
 const Contract = async ({
   searchParams,
@@ -28,7 +31,9 @@ const Contract = async ({
             </ul>
           </div>
         </div>
-        <Listing data={nftList} />
+        <Suspense fallback={<ListingCardSkeleton />}>
+          {nftList?.data?.nfts && <Listing data={nftList?.data?.nfts} />}
+        </Suspense>
         {/* <CardListing loading={loading} nftList={nftList} />
         {loadingMore && (
           <ul className="grid-card-list d-flex flex-wrap">

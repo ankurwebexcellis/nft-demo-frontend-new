@@ -1,4 +1,5 @@
 "use client";
+
 import { NFTCardProps } from "@/lib/definitions";
 import Link from "next/link";
 import { usePathname } from "next/navigation";

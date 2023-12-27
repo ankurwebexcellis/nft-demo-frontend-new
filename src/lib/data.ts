@@ -1,4 +1,3 @@
-"use server";
 import axios from "axios";
 import {
   GetNftInfoResponse,
@@ -29,10 +28,8 @@ export const fetchNftInfo = async (params: NftFetchParams) => {
         params,
       }
     );
-    console.log("nft1:", data);
     return data?.data?.nft;
   } catch (err) {
-    console.log("nft1:", err);
     // return err;
     return null;
   }
