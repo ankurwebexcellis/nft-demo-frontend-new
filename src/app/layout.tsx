@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-// import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap/dist/css/bootstrap.css";
 import "./globals.css";
 import { Inter } from "next/font/google";
 

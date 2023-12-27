@@ -9,7 +9,7 @@ const Header = () => {
         <nav className="navbar navbar-expand-xl">
           <div className="container-fluid">
             <div className="nav-inside d-flex align-items-center justify-content-between">
-              <Link className="navbar-brand" href="/">
+              <Link className="navbar-brand text-white" href="/contract">
                 NFT Hub
               </Link>
             </div>
