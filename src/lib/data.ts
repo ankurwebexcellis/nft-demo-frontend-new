@@ -10,7 +10,7 @@ export const fetchNftByContract = async (params: NftFetchParams) => {
     const { data, status } = await axios.get<GetNftResponse>(
       process.env.NEXT_PUBLIC_API_URL + "nftApis/byContract",
       {
-        params: { ...params, limit: 20 },
+        params,
       }
     );
     return data?.data;
@@ -23,7 +23,7 @@ export const fetchNftByContract = async (params: NftFetchParams) => {
 export const fetchNftByWallet = async (params: NftFetchParams) => {
   try {
     const { data, status } = await axios.get<GetNftResponse>(
-      process.env.API_URL + "nftApis/byWallet",
+      process.env.NEXT_PUBLIC_API_URL + "nftApis/byWallet",
       {
         params,
       }
@@ -39,7 +39,7 @@ export const fetchNftByWallet = async (params: NftFetchParams) => {
 export const fetchNftInfo = async (params: NftFetchParams) => {
   try {
     const { data, status } = await axios.get<GetNftInfoResponse>(
-      process.env.API_URL + "nftApis/nftDetails",
+      process.env.NEXT_PUBLIC_API_URL + "nftApis/nftDetails",
       {
         params,
       }
