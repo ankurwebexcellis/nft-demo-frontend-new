@@ -10,7 +10,7 @@ export const fetchNftByContract = async (params: NftFetchParams) => {
     const { data, status } = await axios.get<GetNftResponse>(
       process.env.NEXT_PUBLIC_API_URL + "nftApis/byContract",
       {
-        params,
+        params: { ...params, limit: 20 },
       }
     );
     return data?.data;

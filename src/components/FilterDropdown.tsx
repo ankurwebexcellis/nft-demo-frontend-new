@@ -7,6 +7,7 @@ const FilterDropdown = () => {
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const { replace } = useRouter();
+  const router = useRouter();
 
   const selectValue = searchParams.get("collection") || "";
 
@@ -15,8 +16,8 @@ const FilterDropdown = () => {
 
     if (collection) params.set("collection", collection);
     else params.set("collection", "0x5Af0D9827E0c53E4799BB226655A1de152A425a5");
-
-    replace(`${pathname}?${params.toString()}`);
+    //  return replace(`${pathname}?${params.toString()}`);
+    router.push(pathname + "?" + params.toString());
   }, []);
 
   useEffect(() => {

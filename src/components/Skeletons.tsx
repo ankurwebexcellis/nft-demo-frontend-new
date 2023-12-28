@@ -67,6 +67,10 @@ export const ListingCardSkeleton = () => {
       <CardSkeleton />
       <CardSkeleton />
       <CardSkeleton />
+      <CardSkeleton />
+      <CardSkeleton />
+      <CardSkeleton />
+      <CardSkeleton />
     </ul>
   );
 };
@@ -74,10 +78,6 @@ export const ListingCardSkeleton = () => {
 export const LoadMoreListingCardSkeleton = () => {
   return (
     <>
-      <CardSkeleton />
-      <CardSkeleton />
-      <CardSkeleton />
-      <CardSkeleton />
       <CardSkeleton />
       <CardSkeleton />
       <CardSkeleton />

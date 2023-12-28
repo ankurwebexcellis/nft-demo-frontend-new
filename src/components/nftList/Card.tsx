@@ -28,7 +28,15 @@ const Card = ({
         </div>
         <div className="gc-img-box">
           <div className="pc-image">
-            {image && <Image src={image} alt="NFT Image" fill />}
+            {image && (
+              <Image
+                src={image}
+                alt="NFT Image"
+                fill
+                sizes="100%"
+                loading="lazy"
+              />
+            )}
           </div>
         </div>
         <div className="gc-footer">
