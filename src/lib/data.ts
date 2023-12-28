@@ -8,7 +8,7 @@ import {
 export const fetchNftByContract = async (params: NftFetchParams) => {
   try {
     const { data, status } = await axios.get<GetNftResponse>(
-      process.env.API_URL + "nftApis/byContract",
+      process.env.NEXT_PUBLIC_API_URL + "nftApis/byContract",
       {
         params,
       }

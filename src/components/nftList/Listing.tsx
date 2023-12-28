@@ -20,16 +20,8 @@ const Listing = async ({
   const [nftList, setNftList] = useState<Nft[]>(data?.nfts ?? []);
   const [next, setNext] = useState<string>(data?.next ?? "");
 
-  const { ref, inView } = useInView();
-
-  // useEffect(() => {
-  //   if (inView && !pageLoading) {
-  //     // getNftList();
-  //   }
-  // }, [inView]);
-
   const getNftList = async () => {
-    const newList = (await fetchNftByContract({ address, next })) || null;
+    const newList = await fetchNftByContract({ address, next });
     console.log("new:", newList);
     if (newList?.nfts) setNftList([...nftList, ...newList?.nfts]);
     if (newList?.next) setNext(newList?.next);
