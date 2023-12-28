@@ -4,22 +4,22 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "openseauserdata.com",
+        hostname: "*",
         port: "",
-        pathname: "/files/**",
+        pathname: "/**",
       },
-      {
-        protocol: "https",
-        hostname: "miladymaker.net",
-        port: "",
-        pathname: "/milady/**",
-      },
-      {
-        protocol: "https",
-        hostname: "www.larvalabs.com",
-        port: "",
-        pathname: "/cryptopunks/**",
-      },
+      // {
+      //   protocol: "https",
+      //   hostname: "miladymaker.net",
+      //   port: "",
+      //   pathname: "/milady/**",
+      // },
+      // {
+      //   protocol: "https",
+      //   hostname: "www.larvalabs.com",
+      //   port: "",
+      //   pathname: "/cryptopunks/**",
+      // },
     ],
   },
 };

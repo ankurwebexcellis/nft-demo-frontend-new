@@ -21,8 +21,10 @@ const Listing = ({
   const [next, setNext] = useState<string>(data?.next ?? "");
 
   useEffect(() => {
-    setNftList(data.nfts);
-    setNext(data.next);
+    if (address) {
+      setNftList(data.nfts);
+      setNext(data.next);
+    }
   }, [address]);
 
   const getNftList = async () => {
