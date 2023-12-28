@@ -28,6 +28,7 @@ const Listing = ({
   }, [address]);
 
   const getNftList = async () => {
+    if (!address) return;
     const newList = await fetchNftByContract({ address, next });
     if (newList?.nfts) setNftList([...nftList, ...newList?.nfts]);
     if (newList?.next) setNext(newList?.next);
@@ -49,7 +50,9 @@ const Listing = ({
             />
           ))}
         </ul>
-        <LoadMore getNftList={getNftList} />
+        {address && nftList?.length > 0 && next && (
+          <LoadMore getNftList={getNftList} />
+        )}
       </Suspense>
     </>
   );
