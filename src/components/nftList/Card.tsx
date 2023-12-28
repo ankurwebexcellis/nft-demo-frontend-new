@@ -37,11 +37,9 @@ const Card = ({
               <Image
                 src={image}
                 alt="NFT Image"
-                // fill
                 width={200}
                 height={300}
-                // sizes="100%"
-                // loading="lazy"
+                priority
               />
             )}
           </div>
