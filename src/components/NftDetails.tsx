@@ -2,6 +2,8 @@ import { Nft } from "@/lib/definitions";
 import { truncateAddress } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
+import toast from "react-hot-toast";
+import CopyText from "./CopyText";
 
 const NftDetails = ({ nftInfo }: { nftInfo: Nft }) => {
   return (
@@ -16,6 +18,7 @@ const NftDetails = ({ nftInfo }: { nftInfo: Nft }) => {
                 fill
                 sizes="100%"
                 loading="eager"
+                priority
               />
             )}
           </div>
@@ -72,10 +75,7 @@ const NftDetails = ({ nftInfo }: { nftInfo: Nft }) => {
                       <div className="number-list-box">
                         <div className="number-list-numerical">{index + 1}</div>
                         <div className="number-list-content">
-                          <Link href="#!">
-                            {/* TODO: Copy address  */}
-                            {truncateAddress(owner?.address)}
-                          </Link>
+                          <CopyText owner={owner} />
                         </div>
                       </div>
                     </li>

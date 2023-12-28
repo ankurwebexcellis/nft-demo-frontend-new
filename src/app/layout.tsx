@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import "react-loading-skeleton/dist/skeleton.css";
 import "./globals.css";
 import { Inter } from "next/font/google";
-
+import { Toaster } from "react-hot-toast";
 //  Components
 import Header from "@/components/Header";
 import Sidebar from "@/components/sidebar/Sidebar";
@@ -25,6 +25,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Header />
+        <Toaster position="bottom-right" />
         <main className="page-wrapper">
           <Sidebar />
           {children}

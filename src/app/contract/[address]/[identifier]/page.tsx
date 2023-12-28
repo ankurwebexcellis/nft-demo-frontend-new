@@ -8,7 +8,6 @@ const NftPage = async ({
 }) => {
   const { address, identifier } = params;
   const nftInfo = (await fetchNftInfo({ address, identifier })) || null;
-  console.log("details:", nftInfo);
 
   return (
     <div className="fwc-wrapper">

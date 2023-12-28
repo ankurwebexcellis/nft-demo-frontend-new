@@ -30,9 +30,7 @@ export const fetchNftByWallet = async (params: NftFetchParams) => {
     );
     return data?.data;
   } catch (err) {
-    // return err;
     return null;
-    // TODO: Error Handling for all api calls
   }
 };
 

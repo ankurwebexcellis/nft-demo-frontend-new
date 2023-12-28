@@ -8,7 +8,7 @@ import { fetchNftByContract } from "@/lib/data";
 import LoadMore from "./LoadMore";
 import { ListingCardSkeleton } from "../Skeletons";
 
-const Listing = async ({
+const Listing = ({
   data,
   address,
 }: {

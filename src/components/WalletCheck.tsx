@@ -39,7 +39,22 @@ const WalletCheck = () => {
         {/* {!checked && ( */}
         <div className="nfr-box">
           <div className="nrf-text">
-            {address && <h5>Your wallet does not seem to have any NFT</h5>}
+            {address && (
+              <div
+                className="text-content"
+                style={{ maxWidth: "40rem", margin: "0 auto" }}
+              >
+                <h6>
+                  You have already connected your wallet. Your connected wallet
+                  address is "{address}"
+                </h6>
+                <p>
+                  Your wallet does not seem to have any NFT. You can disconnect
+                  your wallet manually from MetaMask and try connecting another
+                  wallet.
+                </p>
+              </div>
+            )}
             <Link
               href="#!"
               className="btn btn-primary btn-sm mt-4"
