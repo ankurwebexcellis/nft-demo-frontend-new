@@ -3,7 +3,7 @@
 import { NFTCardProps } from "@/lib/definitions";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 const Card = ({
   address,
@@ -14,9 +14,14 @@ const Card = ({
   token,
 }: NFTCardProps) => {
   const pathname = usePathname();
+  const router = useRouter();
   return (
     <Link
-      href={{ pathname: pathname + `/${address}/${identifier}` }}
+      href="#!"
+      onClick={(e) => {
+        e.preventDefault();
+        router.replace(`${pathname}/${address}/${identifier}`);
+      }}
       className="grid-card-item"
     >
       <div className="grid-card-box position-relative text-white ">
