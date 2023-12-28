@@ -15,6 +15,7 @@ const Contract = async ({
   const address = searchParams?.collection || "";
 
   const nftList = (address && (await fetchNftByContract({ address }))) || null;
+
   return (
     <div className="main-content-wrapper position-relative">
       <div className="mcw-header d-flex align-items-center">
