@@ -4,11 +4,11 @@ import Link from "next/link";
 import { usePathname, useSearchParams, useRouter } from "next/navigation";
 import { useState } from "react";
 
-const WalletCheck = ({}) => {
+const WalletCheck = () => {
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const router = useRouter();
-
+  const address = searchParams.get("address");
   const connectWallet = async (e: React.MouseEvent<HTMLElement>) => {
     if (e) e.preventDefault();
     if (typeof window !== "undefined") {
@@ -39,7 +39,7 @@ const WalletCheck = ({}) => {
         {/* {!checked && ( */}
         <div className="nfr-box">
           <div className="nrf-text">
-            <h5>Your wallet does not seem to have any NFT</h5>
+            {address && <h5>Your wallet does not seem to have any NFT</h5>}
             <Link
               href="#!"
               className="btn btn-primary btn-sm mt-4"

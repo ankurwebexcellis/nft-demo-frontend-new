@@ -1,5 +1,6 @@
 import { Nft } from "@/lib/definitions";
 import { truncateAddress } from "@/lib/utils";
+import Image from "next/image";
 import Link from "next/link";
 
 const NftDetails = ({ nftInfo }: { nftInfo: Nft }) => {
@@ -8,7 +9,15 @@ const NftDetails = ({ nftInfo }: { nftInfo: Nft }) => {
       <div className="gcdr-img-box">
         <div className="gcdr-img-outer text-white">
           <div className="gcdr-image">
-            {nftInfo?.image_url && <img src={nftInfo?.image_url} alt="" />}
+            {nftInfo?.image_url && (
+              <Image
+                src={nftInfo?.image_url}
+                alt="NFT Image"
+                fill
+                sizes="100%"
+                loading="eager"
+              />
+            )}
           </div>
           <div className="gcdr-group d-flex flex-wrap">
             <div className="gcdr-item flex-grow-1 w-auto">

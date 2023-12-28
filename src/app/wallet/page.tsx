@@ -21,7 +21,7 @@ const Wallet = async ({
         <h1>NFTs by Wallet</h1>
       </div>
       <div className="fwc-wrapper">
-        {!address ? (
+        {!nftList || nftList?.nfts?.length === 0 ? (
           <WalletCheck />
         ) : (
           <Suspense fallback={<ListingCardSkeleton />}>
