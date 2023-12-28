@@ -22,7 +22,6 @@ const Listing = async ({
 
   const getNftList = async () => {
     const newList = await fetchNftByContract({ address, next });
-    console.log("new:", newList);
     if (newList?.nfts) setNftList([...nftList, ...newList?.nfts]);
     if (newList?.next) setNext(newList?.next);
   };
