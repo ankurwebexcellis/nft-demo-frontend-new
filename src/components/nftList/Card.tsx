@@ -20,7 +20,7 @@ const Card = ({
       href="#!"
       onClick={(e) => {
         e.preventDefault();
-        router.replace(`${pathname}/${address}/${identifier}`);
+        router.push(`nft/${address}/${identifier}`);
       }}
       className="grid-card-item"
     >

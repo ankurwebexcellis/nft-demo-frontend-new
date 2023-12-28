@@ -12,8 +12,8 @@ const NftDetails = ({ nftInfo }: { nftInfo: Nft }) => {
               <Image
                 src={nftInfo?.image_url}
                 alt="NFT Image"
-                fill
-                sizes="100%"
+                width={200}
+                height={300}
                 loading="eager"
                 priority
               />
