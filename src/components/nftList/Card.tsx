@@ -53,7 +53,7 @@ const Card = ({
               </p>
             </div>
             <div className="gc-intro-item flex-grow-1 w-auto">
-              <h6>{collection}</h6>
+              <h6 className="ellipsis">{collection}</h6>
               <p>
                 <strong>Collection</strong>
               </p>

@@ -2137,7 +2137,7 @@ fieldset.fieldset:not(:last-child) {
 .gcdr-details-item + .gcdr-details-item {
   margin-top: 8px;
 }
-.endText span {
+.ellipsis {
   white-space: nowrap;
   width: 100px;
   overflow: hidden;

@@ -1,6 +1,6 @@
 import { Nft } from "@/lib/definitions";
 import Image from "next/image";
-import CopyText from "./CopyText";
+import RedirectOwner from "./RedirectOwner";
 
 const NftDetails = ({ nftInfo }: { nftInfo: Nft }) => {
   return (
@@ -72,7 +72,7 @@ const NftDetails = ({ nftInfo }: { nftInfo: Nft }) => {
                       <div className="number-list-box">
                         <div className="number-list-numerical">{index + 1}</div>
                         <div className="number-list-content">
-                          <CopyText owner={owner} />
+                          <RedirectOwner owner={owner} />
                         </div>
                       </div>
                     </li>
