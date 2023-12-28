@@ -2,7 +2,7 @@ import { Suspense } from "react";
 import { fetchNftByContract } from "@/lib/data";
 
 import FilterDropdown from "@/components/FilterDropdown";
-import Listing from "@/components/nftList/Listing";
+import Listing from "@/components/nftList/ContractListing";
 import {
   CardSkeleton,
   ListingCardSkeleton,

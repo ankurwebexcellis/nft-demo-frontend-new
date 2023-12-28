@@ -1,6 +1,7 @@
 import FilterDropdown from "@/components/FilterDropdown";
 import { ListingCardSkeleton } from "@/components/Skeletons";
-import Listing from "@/components/nftList/Listing";
+import WalletCheck from "@/components/WalletCheck";
+import Listing from "@/components/nftList/WalletListing";
 import { fetchNftByWallet } from "@/lib/data";
 import { Suspense } from "react";
 
@@ -8,12 +9,11 @@ const Wallet = async ({
   searchParams,
 }: {
   searchParams?: {
-    collection?: string;
+    address?: string;
   };
 }) => {
-  const address = searchParams?.collection || "";
-
-  const nftList = (await fetchNftByWallet({ address })) || null;
+  const address = searchParams?.address || "";
+  const nftList = (address && (await fetchNftByWallet({ address }))) || null;
 
   return (
     <div className="main-content-wrapper position-relative">
@@ -21,9 +21,13 @@ const Wallet = async ({
         <h1>NFTs by Wallet</h1>
       </div>
       <div className="fwc-wrapper">
-        <Suspense fallback={<ListingCardSkeleton />}>
-          {nftList && <Listing data={nftList} address={address} />}
-        </Suspense>
+        {!address ? (
+          <WalletCheck />
+        ) : (
+          <Suspense fallback={<ListingCardSkeleton />}>
+            {nftList && <Listing data={nftList} address={address} />}
+          </Suspense>
+        )}
       </div>
     </div>
   );

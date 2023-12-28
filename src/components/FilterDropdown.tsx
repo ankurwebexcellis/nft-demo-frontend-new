@@ -6,7 +6,6 @@ import { useCallback, useEffect } from "react";
 const FilterDropdown = () => {
   const searchParams = useSearchParams();
   const pathname = usePathname();
-  const { replace } = useRouter();
   const router = useRouter();
 
   const selectValue = searchParams.get("collection") || "";
