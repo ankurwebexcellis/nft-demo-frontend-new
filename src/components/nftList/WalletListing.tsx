@@ -1,12 +1,10 @@
 import Card from "./Card";
 import { Nft } from "@/lib/definitions";
-import { Suspense, useEffect, useState } from "react";
-import LoadMore from "./LoadMore";
+import { Suspense } from "react";
 import { ListingCardSkeleton } from "../Skeletons";
 
 const Listing = async ({
   data,
-  address,
 }: {
   data: {
     nfts: Nft[];

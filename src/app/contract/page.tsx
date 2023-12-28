@@ -3,11 +3,7 @@ import { fetchNftByContract } from "@/lib/data";
 
 import FilterDropdown from "@/components/FilterDropdown";
 import Listing from "@/components/nftList/ContractListing";
-import {
-  CardSkeleton,
-  ListingCardSkeleton,
-  LoadMoreListingCardSkeleton,
-} from "@/components/Skeletons";
+import { ListingCardSkeleton } from "@/components/Skeletons";
 
 const Contract = async ({
   searchParams,

@@ -1,8 +1,5 @@
 import { Nft } from "@/lib/definitions";
-import { truncateAddress } from "@/lib/utils";
 import Image from "next/image";
-import Link from "next/link";
-import toast from "react-hot-toast";
 import CopyText from "./CopyText";
 
 const NftDetails = ({ nftInfo }: { nftInfo: Nft }) => {

@@ -30,11 +30,6 @@ const FilterDropdown = () => {
       <select
         className="form-select"
         onChange={(e) => {
-          //   document.removeEventListener(
-          //     "scroll",
-          //     trackScrolling,
-          //     true
-          //   );
           handleSelect(e.target.value);
         }}
         value={selectValue}

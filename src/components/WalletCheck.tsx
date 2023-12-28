@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { usePathname, useSearchParams, useRouter } from "next/navigation";
-import { useState } from "react";
 
 const WalletCheck = () => {
   const searchParams = useSearchParams();
@@ -21,7 +20,7 @@ const WalletCheck = () => {
             "_blank"
           );
 
-        // Check if we are authorized to access the user's wallet
+        // Get Counts from the ethereum account
         const accounts = await ethereum.request({
           method: "eth_requestAccounts",
         });
@@ -36,7 +35,6 @@ const WalletCheck = () => {
   return (
     <div className="fwc-body">
       <div className="no-record-found-container">
-        {/* {!checked && ( */}
         <div className="nfr-box">
           <div className="nrf-text">
             {address && (
@@ -64,11 +62,9 @@ const WalletCheck = () => {
             </Link>
           </div>
         </div>
-        {/* )} */}
       </div>
     </div>
   );
-  //   return children;
 };
 
 export default WalletCheck;

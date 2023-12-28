@@ -1,4 +1,3 @@
-import FilterDropdown from "@/components/FilterDropdown";
 import { ListingCardSkeleton } from "@/components/Skeletons";
 import WalletCheck from "@/components/WalletCheck";
 import Listing from "@/components/nftList/WalletListing";

@@ -1,9 +1,8 @@
 "use client";
 
 import Card from "./Card";
-import { GetNftResponse, Nft } from "@/lib/definitions";
+import { Nft } from "@/lib/definitions";
 import { Suspense, useEffect, useState } from "react";
-import { useInView } from "react-intersection-observer";
 import { fetchNftByContract } from "@/lib/data";
 import LoadMore from "./LoadMore";
 import { ListingCardSkeleton } from "../Skeletons";

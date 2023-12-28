@@ -1,7 +1,5 @@
 import NftDetails from "@/components/NftDetails";
 import { fetchNftInfo } from "@/lib/data";
-import { truncateAddress } from "@/lib/utils";
-import Link from "next/link";
 
 const NftPage = async ({
   params,
