@@ -16,14 +16,7 @@ const Card = ({
   const pathname = usePathname();
   const router = useRouter();
   return (
-    <Link
-      href="#!"
-      onClick={(e) => {
-        e.preventDefault();
-        router.push(`nft/${address}/${identifier}`);
-      }}
-      className="grid-card-item"
-    >
+    <Link href={`nft/${address}/${identifier}`} className="grid-card-item">
       <div className="grid-card-box position-relative text-white ">
         <div className="gc-header d-flex flex-wrap">
           <div className="gc-header-left">
@@ -33,15 +26,7 @@ const Card = ({
         </div>
         <div className="gc-img-box">
           <div className="pc-image">
-            {image && (
-              <Image
-                src={image}
-                alt="NFT Image"
-                width={200}
-                height={300}
-                priority
-              />
-            )}
+            <img src={image ?? ""} alt="NFT Image" />
           </div>
         </div>
         <div className="gc-footer">
