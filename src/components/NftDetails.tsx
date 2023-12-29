@@ -27,7 +27,7 @@ const NftDetails = ({ nftInfo }: { nftInfo: Nft }) => {
               </p>
             </div>
             <div className="gcdr-item flex-grow-1 w-auto">
-              <h6>{nftInfo?.collection}</h6>
+              <h6 className="ellipsis">{nftInfo?.collection}</h6>
               <p>
                 <strong>Collection</strong>
               </p>
